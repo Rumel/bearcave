@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt-ruby'
 gem 'jquery-rails'
 gem 'rails', '4.0.0.rc1'
 gem 'turbolinks'
