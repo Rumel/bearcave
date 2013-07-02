@@ -88,6 +88,16 @@ describe User do
 		it { should_not be_valid }
 	end
 
+	describe "with an email with mixed characters" do
+		let(:mixed_email) { "aFaFaFaFa@GMAIL.com" }
+
+		it "should be saved all lower case" do
+			@user.email = mixed_email
+			@user.save
+			expect(@user.reload.email).to eq mixed_email.downcase
+		end
+	end
+
 	describe "return value of authenticate method" do
 		before { @user.save }
 		let(:found_user) { User.find_by(email: @user.email) }
