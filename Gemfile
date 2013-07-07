@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt-ruby'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'rails', '4.0.0.rc1'
 gem 'turbolinks'
@@ -12,6 +13,7 @@ group :development do
 end
 
 group :test do
+	gem 'capybara'
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 end

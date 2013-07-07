@@ -1,0 +1,16 @@
+@import "bootstrap";
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+.signup {
+	width: 240px;
+
+	input {
+		display: block;
+		width: 100%;
+	}
+}
