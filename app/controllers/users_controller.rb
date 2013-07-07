@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   	if @user.save
   		render text: "#{@user.name} created!"
   	else
-  		render :new
+  		render 'new'
   	end
   end
 

@@ -19,6 +19,12 @@ describe "User pages" do
 			it "should not create the user account" do
 				expect { click_button "Create!"}.not_to change(User, :count)
 			end
+
+			describe "it should display errors" do
+				before { click_button "Create!" }
+				
+				it { should have_content('Failed signup') }
+			end
 		end
 
 		describe "with valid information" do

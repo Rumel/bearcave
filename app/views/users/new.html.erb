@@ -2,6 +2,7 @@
 <div class="signup center">
 	<h1 class="center">Bearcave</h1>
 	<%= form_for @user do |f| %>
+		<%= render 'shared/error_messages' %>
 		<%= f.text_field :name, placeholder: "Name" %>
 		<%= f.text_field :email, placeholder: "Email" %>
 		<%= f.password_field :password, placeholder: "Password" %>
