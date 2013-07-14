@@ -5,6 +5,12 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
+
+    # First user created should be an admin
+    if not User.exists?
+      @user.admin = true
+    end
+
   	if @user.save
   		render text: "#{@user.name} created!"
   	else

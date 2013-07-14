@@ -13,7 +13,7 @@ describe "User pages" do
 	describe "Creating an account" do
 		before { visit signup_path }
 
-		let(:submit) { "Create!"}
+		let(:submit) { "Create!" }
 
 		describe "with invalid information" do
 			it "should not create the user account" do
@@ -21,7 +21,7 @@ describe "User pages" do
 			end
 
 			describe "it should display errors" do
-				before { click_button "Create!" }
+				before { click_button submit }
 				
 				it { should have_content('Failed signup') }
 			end
@@ -36,7 +36,7 @@ describe "User pages" do
 			end
 
 			it "should create the user" do
-				expect { click_button "Create!" }.to change(User, :count).by(1)
+				expect { click_button submit }.to change(User, :count).by(1)
 			end
 		end
 	end
