@@ -11,19 +11,20 @@ group :development do
 	gem 'better_errors'
 	gem 'rspec-rails'
 	gem 'sqlite3'
+	gem 'thin'
 end
 
 group :test do
 	gem 'capybara'
-	gem 'rspec-rails'
 	gem 'factory_girl_rails'
+	gem 'rspec-rails'
 end
 
 group :assets do
-	gem 'sass-rails', '~> 4.0.0'
-	gem 'uglifier', '>= 1.3.0'
 	gem 'coffee-rails', '~> 4.0.0'
 	gem 'jbuilder', '~> 1.0.1'
+	gem 'sass-rails', '~> 4.0.0'
+	gem 'uglifier', '>= 1.3.0'
 end
 
 group :doc do
