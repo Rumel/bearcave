@@ -1,18 +1,23 @@
 class UsersController < ApplicationController
   def new
-  	@user = User.new
+    if !User.exists?
+      @user = User.new
+    else
+      redirect_to signin_path
+    end
   end
 
   def create
   	@user = User.new(user_params)
 
     # First user created should be an admin
-    if not User.exists?
+    if !User.exists?
       @user.admin = true
     end
 
   	if @user.save
-  		render text: "#{@user.name} created!"
+      sign_in @user
+      redirect_to movies_path
   	else
   		render 'new'
   	end
