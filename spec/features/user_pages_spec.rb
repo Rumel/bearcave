@@ -40,6 +40,12 @@ describe "User pages" do
 				expect { click_button submit }.to change(User, :count).by(1)
 			end
 
+			it "should be admin" do
+				click_button submit
+				user = User.first
+				user.is_admin?.should == true
+			end
+
 			describe "Creating a second user" do
 				before do
 					click_button submit
