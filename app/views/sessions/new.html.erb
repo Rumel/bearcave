@@ -1,11 +1,14 @@
 <div class="center signin">
 	<h1 class="center">Sign in</h1>
 	<% flash.each do |key, value| %>
-		<div class="alert alert-error"><%= value %></div>
+		<div data-alert class="alert-box alert">
+			<%= value %>
+			<a href="#" class="close">&times;</a>
+		</div>
 	<% end %>
 	<%= form_for(:session, url: sessions_path) do |f| %>
 		<%= f.text_field :email, placeholder: "Email" %>
 		<%= f.password_field :password, placeholder: "Password" %>
-		<%= f.submit "Sign in", class: "btn btn-primary" %>
+		<%= f.submit "Sign in", class: "button" %>
 	<% end %>
 </div>
