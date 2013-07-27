@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'rails', '4.0.0'
 gem 'turbolinks'
@@ -21,11 +22,9 @@ end
 
 group :assets do
 	gem 'coffee-rails', '~> 4.0.0'
-	gem 'compass-rails'
 	gem 'jbuilder', '~> 1.0.1'
 	gem 'sass-rails', '~> 4.0.0'
 	gem 'uglifier', '>= 1.3.0'
-	gem 'zurb-foundation'
 end
 
 group :doc do
