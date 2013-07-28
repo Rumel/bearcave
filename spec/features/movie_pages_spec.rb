@@ -22,6 +22,10 @@ describe "Movie pages" do
 		it "should be able to access movies" do
 			should have_content(movie_index_content)
 		end
+
+		it "should be able to see admin" do
+			should have_link("Admin")
+		end
 	end
 
 	describe "Regular user" do
