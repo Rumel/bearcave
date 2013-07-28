@@ -4,19 +4,34 @@ describe "Movie pages" do
 	subject { page }
 
 	let(:admin) { FactoryGirl.create(:admin) }
+	let(:user) { FactoryGirl.create(:user) }
+
+	let(:movie_index_content) { "Movie Index" }
 
 	before do
 		admin.save
+		user.save
 	end
 
-	describe "Only signed in users" do
+	describe "Admin user" do
 		before do
 			signin admin
 			visit movies_path
 		end
 
 		it "should be able to access movies" do
-			should have_content("Movie Index")
+			should have_content(movie_index_content)
+		end
+	end
+
+	describe "Regular user" do
+		before do
+			signin user
+			visit movies_path
+		end
+
+		it "should be able to access movies" do
+			should have_content(movie_index_content)
 		end
 	end
 
