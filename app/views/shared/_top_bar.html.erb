@@ -1,0 +1,30 @@
+<% if signed_in? %>
+	<nav class="top-bar">
+		<ul class="title-area">
+			<li class="name">
+				<h1><%= link_to "Bearcave", movies_path %></h1>
+			</li>
+			<li class="toggle-topbar menu-icon">
+				<a href="#"><span>Menu</span></a>
+			</li>
+		</ul>
+		<section class="top-bar-section">
+			<!-- Left -->
+			<ul class="left">
+				<li><%= link_to "Movies", movies_path %></li>
+				<li><%= link_to "Actors", movies_path %></li>
+			</ul>
+
+			<!-- Right -->
+			<ul class="right">
+				<li class="has-dropdown">
+					<a href="#"><%= current_user.name %></a>
+					<ul class="dropdown">
+						<li><%= link_to "Edit" %></li>
+						<li><%= link_to "Sign out", signout_path, method: :delete %></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	</nav>
+<% end %>

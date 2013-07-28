@@ -1,12 +1,14 @@
 <% if @user.errors.any? %>
 	<div id="error_explanation">
-		<div class="alert alert-error">
+		<div data-alert class="alert-box alert">
 			Failed signup.
+			<a href="#" class="close">&times;</a>
 		</div>
 		<% @user.errors.full_messages.each do |msg| %>
-			<div class="alert alert-error">
-				<%= msg %>
-			</div>
+		<div data-alert class="alert-box">
+			<%= msg %>
+			<a href="#" class="close">&times;</a>
+		</div>
 		<% end %>
 	</div>
 <% end %>
