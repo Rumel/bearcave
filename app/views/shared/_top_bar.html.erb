@@ -12,7 +12,7 @@
 			<!-- Left -->
 			<ul class="left">
 				<% if current_user.is_admin? %>
-					<li><%= link_to "Admin" %></li>
+					<li><%= link_to "Admin", admin_path %></li>
 				<% end %>
 				<li><%= link_to "Movies", movies_path %></li>
 				<li><%= link_to "Actors", movies_path %></li>

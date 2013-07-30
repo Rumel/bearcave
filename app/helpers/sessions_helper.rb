@@ -31,4 +31,14 @@ module SessionsHelper
 			redirect_to signin_path
 		end
 	end
+
+	def signed_in_admin
+		unless signed_in?
+			redirect_to signin_path
+			return
+		end
+		unless current_user.is_admin?
+			raise ActionController::RoutingError.new("Not Found")
+		end
+	end
 end
