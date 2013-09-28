@@ -20,6 +20,10 @@ describe "Admin page" do
 		it "should see admin page" do
 			should have_content("Admin Page")
 		end
+
+		it "should have an upload" do
+			should have_content("Upload")
+		end
 	end
 
 	describe "Regular user" do

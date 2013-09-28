@@ -1,1 +1,12 @@
 <h1>Admin Page</h1>
+
+<h2>Upload Movies</h2>
+<!--<%= form_tag({action: :upload}, multipart: true) do %>
+	<%= file_field_tag 'file' %>
+	<%= submit_tag "Upload", class: "button" %>
+<% end %>-->
+
+<%= form_for :upload, url: admin_upload_path do |f| %>
+	<%= input_tag %>
+	<%= f.submit "Upload", class: "button" %>
+<% end %>
