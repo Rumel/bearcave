@@ -71,4 +71,4 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-apikeys.config
+apikeys.yml

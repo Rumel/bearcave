@@ -8,14 +8,12 @@ class AdminController < ApplicationController
 	def upload
 		uploaded_file = params[:file]
 		@contents = uploaded_file.read.split("\n")
+		@fetched = []
+		@contents.each do |c|
+			search = Tmdb::Search.new
+			search.resource("movie")
+			search.query(c)
+			@fetched << search.fetch.first
+		end
 	end
-
-	private
-
-		# def treat_uploaded_file(text)
-		# 	REPLACEMENTS.each do |r|
-		# 		text.gsub! r, ""
-		# 	end
-		# 	return text
-		# end
 end
