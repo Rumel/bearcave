@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130718054006) do
+ActiveRecord::Schema.define(version: 20131019042728) do
 
   create_table "movies", force: true do |t|
     t.string   "name"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20130718054006) do
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "adult"
+    t.string   "backdrop_path"
+    t.string   "imdb_id"
+    t.string   "poster_path"
+    t.integer  "runtime"
+    t.date     "release_date"
+    t.string   "tagline"
+    t.integer  "tmdb_id"
   end
 
   create_table "users", force: true do |t|
