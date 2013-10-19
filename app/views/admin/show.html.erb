@@ -5,3 +5,8 @@
  	<%= file_field_tag 'file' %>
  	<%= submit_tag "Upload", class: "button" %>
 <% end %>
+
+<h2>Delete all Movies</h2>
+<%= form_tag( admin_deleteall_path, method: "post", remote: true) do %>
+	<button type="submit" class="button">Delete all Movies</button>
+<% end %>

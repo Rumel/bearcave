@@ -1,1 +1,7 @@
 <h1>Movie Index</h1>
+
+<ul>
+	<% @movies.each do |m| %>
+		<%= render "movie", movie: m %>
+	<% end %>
+</ul>
